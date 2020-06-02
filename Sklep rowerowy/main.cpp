@@ -14,8 +14,10 @@ using namespace std;
 
 int main()
 {
+
     Product prod ("Product", 200, 200);
     Bicycle bike("Bicycle", 100, 100, "M");
+    bike.save("test.txt");
     bike.set_quantity(20);
 
     DataBase db;

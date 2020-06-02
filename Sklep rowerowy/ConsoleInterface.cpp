@@ -18,6 +18,7 @@ int ConsoleInterface::users_options()
 	std::cout << "\n\nChoose number:\n"
 		 << "0 - Quit.\n"
 		 << "1 - Show the list of the products available in the shop.\n"
+		 << "2 - Save data base in a file.\n"
          << std::endl;
 	std::cin >> answer;
 	return answer;
@@ -56,6 +57,10 @@ void ConsoleInterface::users_choices(DataBase& db)
             };
             break;
         };
+        case 2:
+            cout << "Enter a file name: ";
+            string filename;
+            cin >> filename;
         };
     };
 };

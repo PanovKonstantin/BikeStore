@@ -3,10 +3,12 @@
 
 Bicycle::Bicycle()
 {
+    type = "Bicycle";
 }
 
 Bicycle::Bicycle(string new_name, float new_price, unsigned int new_quantity, string new_bicycle_size)
 {
+    type = "Bicycle";
     name = new_name;
     price = new_price;
     quantity = new_quantity;

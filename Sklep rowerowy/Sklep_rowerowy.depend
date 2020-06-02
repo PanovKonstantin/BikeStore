@@ -1,35 +1,36 @@
 # depslib dependency file v1.0
-1590944496 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\bicycle.cpp
+1591121150 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\bicycle.cpp
 	"Bicycle.h"
 
-1590944496 d:\studia\semestr 2\proi\projekt\sklep rowerowy\bicycle.h
+1591121124 d:\studia\semestr 2\proi\projekt\sklep rowerowy\bicycle.h
 	"Product.h"
 
-1591110593 d:\studia\semestr 2\proi\projekt\sklep rowerowy\product.h
+1591121276 d:\studia\semestr 2\proi\projekt\sklep rowerowy\product.h
 	<string>
 
-1590944496 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\consoleinterface.cpp
+1591119967 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\consoleinterface.cpp
 	"ConsoleInterface.h"
 	"DataBase.h"
 	<iostream>
 
-1590944496 d:\studia\semestr 2\proi\projekt\sklep rowerowy\consoleinterface.h
+1591112324 d:\studia\semestr 2\proi\projekt\sklep rowerowy\consoleinterface.h
 	"DataBase.h"
 
-1590944496 d:\studia\semestr 2\proi\projekt\sklep rowerowy\database.h
+1591112324 d:\studia\semestr 2\proi\projekt\sklep rowerowy\database.h
 	<vector>
 	"Product.h"
 
-1590944496 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\database.cpp
+1591112324 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\database.cpp
 	"DataBase.h"
 	"Product.h"
 	<iostream>
 
-1591110751 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\product.cpp
+1591121272 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\product.cpp
 	"Product.h"
 	<string>
+	<fstream>
 
-1591110363 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\main.cpp
+1591121287 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\main.cpp
 	<iostream>
 	"DataBase.h"
 	"Product.h"
