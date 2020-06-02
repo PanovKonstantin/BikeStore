@@ -10,8 +10,11 @@ class DataBase
     public:
         DataBase();
         virtual ~DataBase();
-        virtual string get_records();
+        //virtual string get_records();
+        const vector<Product>& get_records();
         virtual void add_record(Product new_record);
+        virtual void list_records_names();
+        bool get_records_data_if_exists(std::string &name, Product& p);
 
     protected:
         vector<Product> records;

@@ -7,6 +7,7 @@ using namespace std;
 class Product
 {
     public:
+        static unsigned int amount;
         Product();
         Product(string new_name, float new_price, unsigned int new_quantity);
         virtual ~Product();
@@ -20,6 +21,7 @@ class Product
         virtual void change_quantity(int change);
 
     protected:
+        int index;
         string name;
         float price;
         unsigned int quantity;
