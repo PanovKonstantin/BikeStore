@@ -10,7 +10,7 @@ class Product
         static unsigned int amount;
         Product();
         Product(string new_name, float new_price, int new_quantity);
-        Product(string filename);
+        Product(string data);
         virtual ~Product();
         virtual string get();
         virtual string get_name();

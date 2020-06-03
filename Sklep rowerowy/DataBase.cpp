@@ -1,6 +1,8 @@
 #include "DataBase.h"
 #include "Product.h"
+#include "Bicycle.h"
 #include <iostream>
+#include <fstream>
 
 DataBase::DataBase()
 {
@@ -16,17 +18,18 @@ void DataBase::add_record(Product new_record)
 {
     records.push_back(new_record);
 };
-/*
-string DataBase::get_records()
+
+string DataBase::get()
 {
     string info = "";
     for(int i = 0; i < records.size(); ++i)
     {
-        info += records[i].get() + "\n";
+        Product *record = &records[i];
+        info += record->get() + "\n";
     }
     return info;
 };
-*/
+
 const vector<Product>& DataBase::get_records()
 {
     return records;
@@ -52,3 +55,31 @@ bool DataBase::get_records_data_if_exists(std::string &name, Product& p)
     };
     return false;
 };
+
+//istream &operator>>( istream  &input, DataBase &DB){
+//    string data;
+//    input >> data;
+//    P.set_all(data);
+//    return input;
+//}
+
+ostream &operator<<(ostream &output, DataBase &DB)
+{
+    output << DB.get();
+    return output;
+}
+
+void DataBase::read(string filename)
+{
+    ifstream file;
+    file.open(filename);
+    string line, type;
+    while(getline(file, line))
+    {
+        type = line.substr(0, line.find(";"));
+        if (type == "Product")
+            add_record(Product(line));
+        else if (type == "Bicycle")
+            add_record(Bicycle(line));
+    }
+}

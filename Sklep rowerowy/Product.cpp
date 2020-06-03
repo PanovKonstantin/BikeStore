@@ -25,9 +25,13 @@ Product::Product(string new_name, float new_price, int new_quantity)
     quantity = new_quantity;
 }
 
-Product::Product(string filename)
+Product::Product(string data)
 {
-    read(filename);
+    type = "Product";
+    name = "";
+    price = 0;
+    quantity = 0;
+    set_all(data);
 }
 
 Product::~Product()
@@ -103,7 +107,7 @@ void Product::set_all(string data)
     }
     catch(const runtime_error d)
     {
-        cout << d.what() << endl;
+        cout << d.what() << endl << data << endl;
     }
 }
 

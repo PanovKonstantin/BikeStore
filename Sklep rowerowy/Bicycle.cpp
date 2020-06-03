@@ -21,6 +21,15 @@ Bicycle::Bicycle(string new_name, float new_price, int new_quantity, string new_
     bicycle_size = new_bicycle_size;
 }
 
+Bicycle::Bicycle(string data)
+{
+    type = "Bicycle";
+    name = "";
+    price = 0;
+    quantity = 0;
+    set_all(data);
+}
+
 Bicycle::~Bicycle()
 {
     //dtor
@@ -76,6 +85,7 @@ string Bicycle::get()
     return Product::get() + bicycle_size + SEPARATOR;
 }
 
+
 istream &operator>>( istream  &input, Bicycle &B){
     string data;
     input >> data;
@@ -87,4 +97,21 @@ ostream &operator<<(ostream &output, Bicycle &B)
 {
     output << B.get();
     return output;
+}
+
+void Bicycle::save(string filename)
+{
+    ofstream file;
+    file.open(filename);
+    file << get();
+    file.close();
+}
+
+void Bicycle::read(string filename)
+{
+    ifstream file;
+    file.open(filename);
+    string data;
+    file >> data;
+    set_all(data);
 }
