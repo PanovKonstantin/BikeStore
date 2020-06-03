@@ -21,6 +21,11 @@ void DataBase::add_record(Product* new_record)
 {
     records.push_back(new_record);
 };
+//
+//void DataBase::add_record(Product new_record)
+//{
+//    records.push_back(&new_record);
+//};
 
 string DataBase::get()
 {
@@ -57,9 +62,11 @@ bool DataBase::get_records_data_if_exists(std::string &name, Product& p)
 };
 
 istream &operator>>( istream  &input, DataBase &DB){
-    string data;
-    input >> data;
-    P.set_all(data);
+    string line;
+    while(getline(input, line))
+    {
+        DB.read_record(line);
+    }
     return input;
 }
 
@@ -73,19 +80,27 @@ void DataBase::read(string filename)
 {
     ifstream file;
     file.open(filename);
-    string line, type;
-    while(getline(file, line))
+    file >> *this;
+}
+void DataBase::read_record(string data)
+{
+    string type;
+    type = data.substr(0, data.find(";"));
+    if (type == "Product")
     {
-        type = line.substr(0, line.find(";"));
-        if (type == "Product")
-        {
-            Product * p = new Product(line);
-            add_record(p);
-        }
-        else if (type == "Bicycle")
-        {
-            Bicycle * p = new Bicycle(line);
-            add_record(p);
-        }
+        Product * p = new Product(data);
+        add_record(p);
     }
+    else if (type == "Bicycle")
+    {
+        Bicycle * p = new Bicycle(data);
+        add_record(p);
+    }
+}
+
+void DataBase::save(string filename)
+{
+    ofstream file;
+    file.open(filename);
+    file << *this;
 }
