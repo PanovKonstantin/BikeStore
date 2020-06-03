@@ -115,3 +115,13 @@ void Bicycle::read(string filename)
     file >> data;
     set_all(data);
 }
+void * Bicycle:: operator new(size_t size)
+{
+    void * p = ::new Bicycle();
+    return p;
+}
+
+void Bicycle::operator delete(void * p)
+{
+    free(p);
+}

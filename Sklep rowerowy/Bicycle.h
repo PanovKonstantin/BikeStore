@@ -15,7 +15,9 @@ class Bicycle : public Product
         virtual void read(string filename);
         friend ostream &operator<<(ostream &output, Bicycle &B);
         friend istream &operator>>( istream  &input, Bicycle &B);
-        virtual string get() override;
+        virtual string get();
+        void * operator new(size_t size);
+        void operator delete(void * p);
 
     protected:
 

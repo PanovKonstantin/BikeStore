@@ -160,3 +160,15 @@ void Product::read(string filename)
     file >> data;
     set_all(data);
 }
+
+void* Product:: operator new(size_t size)
+{
+    void * p = ::new Product();
+    return p;
+}
+
+void Product::operator delete(void * p)
+{
+    free(p);
+}
+

@@ -26,6 +26,8 @@ class Product
         virtual void read(string filename);
         friend ostream &operator<<(ostream &output, Product &P);
         friend istream &operator>>( istream  &input, Product &P);
+        void * operator new(size_t size);
+        void operator delete(void * p);
 
     protected:
         string type;

@@ -11,10 +11,13 @@ DataBase::DataBase()
 
 DataBase::~DataBase()
 {
-    //dtor
+    for (auto record : records)
+    {
+        delete record;
+    }
 }
 
-void DataBase::add_record(Product new_record)
+void DataBase::add_record(Product* new_record)
 {
     records.push_back(new_record);
 };
@@ -22,24 +25,21 @@ void DataBase::add_record(Product new_record)
 string DataBase::get()
 {
     string info = "";
-    for(int i = 0; i < records.size(); ++i)
-    {
-        Product *record = &records[i];
+    for(auto record : records)
         info += record->get() + "\n";
-    }
     return info;
 };
 
-const vector<Product>& DataBase::get_records()
-{
-    return records;
-};
+//const vector<Product>& DataBase::get_records()
+//{
+//    return records;
+//};
 
 void DataBase::list_records_names()
 {
     for(int i = 0; i < records.size(); ++i)
     {
-        cout << records[i].get_name() << std::endl;
+        cout << records[i]->get_name() << std::endl;
     }
 };
 
@@ -47,21 +47,21 @@ bool DataBase::get_records_data_if_exists(std::string &name, Product& p)
 {
     for(int i=0; i < records.size(); ++i)
     {
-        if(name.compare(records[i].get_name()) == 0)
+        if(name.compare(records[i]->get_name()) == 0)
         {
-            p = records[i];
+            p = *records[i];
             return true;
         };
     };
     return false;
 };
 
-//istream &operator>>( istream  &input, DataBase &DB){
-//    string data;
-//    input >> data;
-//    P.set_all(data);
-//    return input;
-//}
+istream &operator>>( istream  &input, DataBase &DB){
+    string data;
+    input >> data;
+    P.set_all(data);
+    return input;
+}
 
 ostream &operator<<(ostream &output, DataBase &DB)
 {
@@ -78,8 +78,14 @@ void DataBase::read(string filename)
     {
         type = line.substr(0, line.find(";"));
         if (type == "Product")
-            add_record(Product(line));
+        {
+            Product * p = new Product(line);
+            add_record(p);
+        }
         else if (type == "Bicycle")
-            add_record(Bicycle(line));
+        {
+            Bicycle * p = new Bicycle(line);
+            add_record(p);
+        }
     }
 }
