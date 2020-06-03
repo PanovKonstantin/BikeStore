@@ -1,11 +1,15 @@
 # depslib dependency file v1.0
-1591121150 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\bicycle.cpp
+1591184808 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\bicycle.cpp
 	"Bicycle.h"
+	<string>
+	<fstream>
+	<iostream>
+	<exception>
 
-1591121124 d:\studia\semestr 2\proi\projekt\sklep rowerowy\bicycle.h
+1591184848 d:\studia\semestr 2\proi\projekt\sklep rowerowy\bicycle.h
 	"Product.h"
 
-1591121276 d:\studia\semestr 2\proi\projekt\sklep rowerowy\product.h
+1591184692 d:\studia\semestr 2\proi\projekt\sklep rowerowy\product.h
 	<string>
 
 1591119967 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\consoleinterface.cpp
@@ -25,12 +29,15 @@
 	"Product.h"
 	<iostream>
 
-1591121272 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\product.cpp
+1591184497 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\product.cpp
 	"Product.h"
+	"Bicycle.h"
 	<string>
 	<fstream>
+	<iostream>
+	<exception>
 
-1591121287 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\main.cpp
+1591184098 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\main.cpp
 	<iostream>
 	"DataBase.h"
 	"Product.h"

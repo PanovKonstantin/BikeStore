@@ -14,19 +14,42 @@ using namespace std;
 
 int main()
 {
+//    string s, delimiter = ";";
+//    cin >> s;
+//    string token = s.substr(0, s.find(delimiter));
+//    cout << token;
 
-    Product prod ("Product", 200, 200);
-    Bicycle bike("Bicycle", 100, 100, "M");
-    bike.save("test.txt");
-    bike.set_quantity(20);
+//    Product prod;
+//    cin >> prod;
+//    cout << prod.get();
 
-    DataBase db;
-    db.add_record(prod);
-    db.add_record(bike);
+    Bicycle bike;
+    cin >> bike;
+    cout << bike;
 
-    //cout << db.get_records();
+//    Product prod ("Product", 200, 200);
+//    cout << prod;   //Product;Product;200.000000;200
+//    Bicycle bike("Bicycle", 100, 100, "M"); //Bicycle;Bicycle;100.000000;100;M;
+//    cout << bike.get();
+//    prod.save("test.txt");
 
-    ConsoleInterface cons_int;
-    cons_int.users_choices(db);
+//    ifstream file;
+//    file.open("test.txt");
+//    string data;
+//    file >> data;
+//    Product prod(data);
+//    prod.get();
+
+
+//    bike.set_quantity(20);
+
+//    DataBase db;
+//    db.add_record(prod);
+//    db.add_record(bike);
+//
+//    //cout << db.get_records();
+//
+//    ConsoleInterface cons_int;
+//    cons_int.users_choices(db);
     return 0;
 }

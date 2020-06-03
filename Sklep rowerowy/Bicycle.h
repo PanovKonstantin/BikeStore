@@ -7,8 +7,11 @@ class Bicycle : public Product
 {
     public:
         Bicycle();
-        Bicycle(string new_name, float new_price, unsigned int new_quantity, string new_bicycle_size);
+        Bicycle(string new_name, float new_price, int new_quantity, string new_bicycle_size);
         virtual ~Bicycle();
+        void set_all(string data);
+        friend ostream &operator<<(ostream &output, Bicycle &B);
+        friend istream &operator>>( istream  &input, Bicycle &B);
         string get();
 
     protected:
