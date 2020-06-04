@@ -7,8 +7,6 @@
 #define SEPARATOR ";"
 using namespace std;
 
-unsigned int Product::amount = 0;
-
 Product::Product()
 {
     type = "Product";
@@ -17,12 +15,12 @@ Product::Product()
     quantity = 0;
 }
 
-Product::Product(string new_name, float new_price, int new_quantity)
+Product::Product(string name, float price, int quantity)
 {
     type = "Product";
-    name = new_name;
-    price = new_price;
-    quantity = new_quantity;
+    this->name = name;
+    this->price = price;
+    this->quantity = quantity;
 }
 
 Product::Product(string data)
@@ -52,6 +50,7 @@ string Product::get_name()
 {
     return name;
 }
+
 float Product::get_price()
 {
     return price;
@@ -62,11 +61,11 @@ int Product::get_quantity()
     return quantity;
 }
 
-void Product::set_all(string new_name, float new_price, int new_quantity)
+void Product::set_all(string name, float price, int quantity)
 {
-    name = new_name;
-    price = new_price;
-    quantity = new_quantity;
+    this->name = name;
+    this->price = price;
+    this->quantity = quantity;
 }
 
 void Product::set_all(string data)
@@ -111,19 +110,19 @@ void Product::set_all(string data)
     }
 }
 
-void Product::set_name(string new_name)
+void Product::set_name(string name)
 {
-    name = new_name;
+    this->name = name;
 }
 
-void Product::set_price(float new_price)
+void Product::set_price(float price)
 {
-    price = new_price;
+    this->price = price;
 }
 
-void Product::set_quantity(int new_quantity)
+void Product::set_quantity(int quantity)
 {
-    quantity = new_quantity;
+    this->quantity = quantity;
 }
 
 void Product::change_quantity(int chage)

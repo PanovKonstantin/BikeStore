@@ -72,7 +72,8 @@ istream &operator>>( istream  &input, DataBase &DB){
 
 ostream &operator<<(ostream &output, DataBase &DB)
 {
-    output << DB.get();
+    for (auto record : DB.records)
+        output << *record << endl;
     return output;
 }
 

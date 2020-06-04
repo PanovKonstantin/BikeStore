@@ -1,7 +1,2 @@
-Bicycle;Product;200.000000;200;M;
-Bicycle;Product2;230.000000;2200;M;
-Product;Product3;321.000000;2100;
-Bicycle;Product4;123.000000;1200;M;
-Product;Product5;321.000000;2100;
 Product;Name;5.500000;10;
 Bicycle;Bike Name;69.959999;3;L;

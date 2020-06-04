@@ -9,7 +9,7 @@
 1591209452 d:\studia\semestr 2\proi\projekt\sklep rowerowy\bicycle.h
 	"Product.h"
 
-1591209449 d:\studia\semestr 2\proi\projekt\sklep rowerowy\product.h
+1591217913 d:\studia\semestr 2\proi\projekt\sklep rowerowy\product.h
 	<string>
 
 1591119967 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\consoleinterface.cpp
@@ -31,7 +31,7 @@
 	<iostream>
 	<fstream>
 
-1591210086 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\product.cpp
+1591216414 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\product.cpp
 	"Product.h"
 	"Bicycle.h"
 	<string>
@@ -39,7 +39,7 @@
 	<iostream>
 	<exception>
 
-1591211792 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\main.cpp
+1591211996 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\main.cpp
 	<iostream>
 	<fstream>
 	<vector>
