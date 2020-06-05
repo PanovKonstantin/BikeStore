@@ -12,13 +12,13 @@ Bicycle::Bicycle()
     type = "Bicycle";
 }
 
-Bicycle::Bicycle(string new_name, float new_price, int new_quantity, string new_bicycle_size)
+Bicycle::Bicycle(string name, float price, int quantity, string bicycle_size)
 {
     type = "Bicycle";
-    name = new_name;
-    price = new_price;
-    quantity = new_quantity;
-    bicycle_size = new_bicycle_size;
+    this->name = name;
+    this->price = price;
+    this->quantity = quantity;
+    this->bicycle_size = bicycle_size;
 }
 
 Bicycle::Bicycle(string data)
@@ -99,22 +99,10 @@ ostream &operator<<(ostream &output, Bicycle &B)
     return output;
 }
 
-void Bicycle::save(string filename)
-{
-    ofstream file;
-    file.open(filename);
-    file << get();
-    file.close();
-}
+void Bicycle::save(string filename){}
 
-void Bicycle::read(string filename)
-{
-    ifstream file;
-    file.open(filename);
-    string data;
-    file >> data;
-    set_all(data);
-}
+void Bicycle::read(string filename){}
+
 void * Bicycle:: operator new(size_t size)
 {
     void * p = ::new Bicycle();

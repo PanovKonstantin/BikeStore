@@ -42,6 +42,12 @@
 		<Unit filename="DataBase.h" />
 		<Unit filename="Product.cpp" />
 		<Unit filename="Product.h" />
+		<Unit filename="Record.cpp" />
+		<Unit filename="Record.h" />
+		<Unit filename="Test.cpp" />
+		<Unit filename="Test.h" />
+		<Unit filename="TestProduct.cpp" />
+		<Unit filename="TestProduct.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

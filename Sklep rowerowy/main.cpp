@@ -12,19 +12,13 @@
 #include "Product.h"
 #include "Bicycle.h"
 #include "ConsoleInterface.h"
+#include "Test.h"
 
 using namespace std;
 
 int main()
 {
-    DataBase db;
-    db.read("test.txt");
-    Product prod("Name", 5.50, 10);
-    Bicycle bike("Bike Name", 69.96, 3, "L");
-    db.add_record(&prod);
-    db.add_record(&bike);
-    db.save("test.txt");
-    cout << db.get() << endl;
-
+    Test test;
+    cout << test.testProduct();
     return 0;
 }

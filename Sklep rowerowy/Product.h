@@ -1,6 +1,7 @@
 #ifndef PRODUCT_H
 #define PRODUCT_H
 #include <string>
+#include "Record.h"
 using namespace std;
 
 /**
@@ -10,7 +11,7 @@ using namespace std;
 * @param price a float - Price of the product.
 * @param quantity an int - Amount of products of that type in a store.
 */
-class Product
+class Product : Record
 {
 protected:
     string type;
@@ -74,6 +75,7 @@ public:
     /**
     *   Product set_all() method. Sets new value for all fields of the object.
     * @param data a string - A string with information about every field of the product.
+    * @author Konstantin Panov
     */
     void set_all(string data);
 
@@ -104,12 +106,14 @@ public:
     /**
     * Product save() method. Saves information about product state in a given file.
     * @param filename a string - name of the file, in which product gets saved int.
+    * @author Konstantin Panov
     */
     virtual void save(string filename);
 
     /**
     * Product read() method. Reads information about product from text file.
     * @param filename a string - name of the text file.
+    * @author Konstantin Panov
     */
     virtual void read(string filename);
 
@@ -117,6 +121,7 @@ public:
     * Overloaded output operator. Returns get() method result.
     * @param output a reference for ostream object - output stream.
     * @param P a reference for Product object.
+    * @author Konstantin Panov
     */
     friend ostream &operator<<(ostream &output, Product &P);
 
@@ -124,16 +129,19 @@ public:
     * Overloaded input operator. Takes a string and calls set_all() method with it.
     * @param input a reference for istream object - input stream.
     * @param P a reference for Product object.
+    * @author Konstantin Panov
     */
     friend istream &operator>>( istream  &input, Product &P);
 
     /**
     * Overloaded new operator.
+    * @author Konstantin Panov
     */
     void * operator new(size_t size);
 
     /**
     * Overloaded delete operator.
+    * @author Konstantin Panov
     */
     void operator delete(void * p);
 };

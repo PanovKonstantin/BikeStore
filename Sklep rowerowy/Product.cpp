@@ -26,9 +26,6 @@ Product::Product(string name, float price, int quantity)
 Product::Product(string data)
 {
     type = "Product";
-    name = "";
-    price = 0;
-    quantity = 0;
     set_all(data);
 }
 
@@ -158,6 +155,7 @@ void Product::read(string filename)
     string data;
     file >> data;
     set_all(data);
+    file.close();
 }
 
 void* Product:: operator new(size_t size)

@@ -1,16 +1,17 @@
 # depslib dependency file v1.0
-1591210087 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\bicycle.cpp
+1591385251 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\bicycle.cpp
 	"Bicycle.h"
 	<string>
 	<fstream>
 	<iostream>
 	<exception>
 
-1591209452 d:\studia\semestr 2\proi\projekt\sklep rowerowy\bicycle.h
+1591384311 d:\studia\semestr 2\proi\projekt\sklep rowerowy\bicycle.h
 	"Product.h"
 
-1591217913 d:\studia\semestr 2\proi\projekt\sklep rowerowy\product.h
+1591359986 d:\studia\semestr 2\proi\projekt\sklep rowerowy\product.h
 	<string>
+	"Record.h"
 
 1591119967 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\consoleinterface.cpp
 	"ConsoleInterface.h"
@@ -20,18 +21,18 @@
 1591112324 d:\studia\semestr 2\proi\projekt\sklep rowerowy\consoleinterface.h
 	"DataBase.h"
 
-1591211920 d:\studia\semestr 2\proi\projekt\sklep rowerowy\database.h
+1591384788 d:\studia\semestr 2\proi\projekt\sklep rowerowy\database.h
 	<vector>
 	"Product.h"
 
-1591211975 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\database.cpp
+1591385341 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\database.cpp
 	"DataBase.h"
 	"Product.h"
 	"Bicycle.h"
 	<iostream>
 	<fstream>
 
-1591216414 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\product.cpp
+1591384298 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\product.cpp
 	"Product.h"
 	"Bicycle.h"
 	<string>
@@ -39,7 +40,7 @@
 	<iostream>
 	<exception>
 
-1591211996 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\main.cpp
+1591385085 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\main.cpp
 	<iostream>
 	<fstream>
 	<vector>
@@ -48,4 +49,37 @@
 	"Product.h"
 	"Bicycle.h"
 	"ConsoleInterface.h"
+	"Test.h"
+
+1591360310 d:\studia\semestr 2\proi\projekt\sklep rowerowy\record.h
+	<string>
+
+1591274583 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\record.cpp
+	"Record.h"
+	<string>
+
+1591361514 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\test.cpp
+	"DataBase.h"
+	"TestProduct.h"
+	"Record.h"
+	"Bicycle.h"
+	"ConsoleInterface.h"
+	"Test.h"
+
+1591280037 d:\studia\semestr 2\proi\projekt\sklep rowerowy\test.h
+	"DataBase.h"
+	"TestProduct.h"
+	"Record.h"
+	"Bicycle.h"
+	"ConsoleInterface.h"
+
+1591361146 d:\studia\semestr 2\proi\projekt\sklep rowerowy\testproduct.h
+	"Product.h"
+
+1591361666 source:d:\studia\semestr 2\proi\projekt\sklep rowerowy\testproduct.cpp
+	"TestProduct.h"
+	"Product.h"
+	<iostream>
+	<cstdio>
+	<fstream>
 

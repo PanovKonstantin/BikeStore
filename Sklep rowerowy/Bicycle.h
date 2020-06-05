@@ -6,11 +6,37 @@ using namespace std;
 class Bicycle : public Product
 {
     public:
+
+        /**
+        * Bicycle default constructor.
+        */
         Bicycle();
-        Bicycle(string new_name, float new_price, int new_quantity, string new_bicycle_size);
+
+        /**
+        * Bicycle constructor. Sets every field of the object with given value.
+        * @param name a string - given value for name field.
+        * @param price a float - given value for price field.
+        * @param quantity an int - given value for quantity field.
+        * @param bicycle_size a string - given value for bicycle_size field.
+        */
+        Bicycle(string name, float price, int quantity, string bicycle_size);
+
+        /**
+        * Bicycle constructor. Sets every field of the object based on a string.
+        * @param data a string - text with information about every field of the object.
+        */
         Bicycle(string data);
+
+        /**
+        * Bicycle Destructor.
+        */
         virtual ~Bicycle();
-        void set_all(string data);
+
+        /**
+        * Bicycle set_all() method. Sets every field of the object based on a string.
+        * @param data a string - text with information about every field of the object.
+        */
+        virtual void set_all(string data);
         virtual void save(string filename);
         virtual void read(string filename);
         friend ostream &operator<<(ostream &output, Bicycle &B);

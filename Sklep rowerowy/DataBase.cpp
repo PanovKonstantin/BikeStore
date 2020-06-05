@@ -21,6 +21,7 @@ void DataBase::add_record(Product* new_record)
 {
     records.push_back(new_record);
 };
+
 //
 //void DataBase::add_record(Product new_record)
 //{
@@ -82,6 +83,7 @@ void DataBase::read(string filename)
     ifstream file;
     file.open(filename);
     file >> *this;
+    file.close();
 }
 void DataBase::read_record(string data)
 {

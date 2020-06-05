@@ -1,2 +1,0 @@
-Product;Name;5.500000;10;
-Bicycle;Bike Name;69.959999;3;L;
