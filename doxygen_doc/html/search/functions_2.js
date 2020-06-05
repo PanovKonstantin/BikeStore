@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['product_19',['Product',['../class_product.html#a847c1d85e67ce387166a597579a55135',1,'Product']]]
+  ['operator_20delete_29',['operator delete',['../class_product.html#a94bbb64687bdb88ee7e50ed499161c27',1,'Product']]],
+  ['operator_20new_30',['operator new',['../class_product.html#a9a263e914c5acce6b769f94c14d7f979',1,'Product']]]
 ];

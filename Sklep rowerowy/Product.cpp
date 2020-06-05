@@ -1,37 +1,45 @@
 #include "Product.h"
+#include "Bicycle.h"
 #include <string>
+#include <fstream>
+#include <iostream>
+#include <exception>
 #define SEPARATOR ";"
 using namespace std;
 
-unsigned int Product::amount = 0;
-
 Product::Product()
 {
-    index = amount;
-    amount++;
+    type = "Product";
+    name = "";
+    price = 0;
+    quantity = 0;
 }
 
-Product::Product(string new_name, float new_price, unsigned int new_quantity)
+Product::Product(string name, float price, int quantity)
 {
-    index = amount;
-    amount++;
-    name = new_name;
-    price = new_price;
-    quantity = new_quantity;
+    type = "Product";
+    this->name = name;
+    this->price = price;
+    this->quantity = quantity;
+}
+
+Product::Product(string data)
+{
+    type = "Product";
+    set_all(data);
 }
 
 Product::~Product()
 {
-    amount--;
 }
 
 string Product::get()
 {
-    string info = to_string(index) + SEPARATOR;
-    info += name + SEPARATOR;
-    info += to_string(price);
-    info += SEPARATOR;
-    info += to_string(quantity);
+    string info = "";
+    info += type                + SEPARATOR;
+    info += name                + SEPARATOR;
+    info += to_string(price)    + SEPARATOR;
+    info += to_string(quantity) + SEPARATOR;
     return info;
 }
 
@@ -39,32 +47,125 @@ string Product::get_name()
 {
     return name;
 }
+
 float Product::get_price()
 {
     return price;
 }
 
-unsigned int Product::get_quantity()
+int Product::get_quantity()
 {
     return quantity;
 }
 
-void Product::set_name(string new_name)
+void Product::set_all(string name, float price, int quantity)
 {
-    name = new_name;
+    this->name = name;
+    this->price = price;
+    this->quantity = quantity;
 }
 
-void Product::set_price(float new_price)
+void Product::set_all(string data)
 {
-    price = new_price;
+    try
+    {
+        string token;
+        int i = 0;
+        size_t pos = 0;
+        while((pos = data.find(SEPARATOR)) != string::npos)
+        {
+            token = data.substr(0, pos);
+            data.erase(0, pos + 1);
+            switch(i)
+            {
+            case 0:
+                if (type != token)
+                    throw runtime_error("Not a product");
+                break;
+            case 1:
+                name = token;
+                break;
+            case 2:
+                if (token.find_first_not_of("0123456789-+.") != string::npos)
+                    throw runtime_error("Not an integer");
+                price = stof(token);
+                break;
+            case 3:
+                if (token.find_first_not_of("0123456789-+.") != string::npos)
+                    throw runtime_error("Not an integer");
+                quantity = stoi(token);
+                break;
+            default:
+                break;
+            }
+            ++i;
+        }
+    }
+    catch(const runtime_error d)
+    {
+        cout << d.what() << endl << data << endl;
+    }
 }
 
-void Product::set_quantity(unsigned int new_quantity)
+void Product::set_name(string name)
 {
-    quantity = new_quantity;
+    this->name = name;
+}
+
+void Product::set_price(float price)
+{
+    this->price = price;
+}
+
+void Product::set_quantity(int quantity)
+{
+    this->quantity = quantity;
 }
 
 void Product::change_quantity(int chage)
 {
     quantity += chage;
 }
+
+istream &operator>>( istream  &input, Product &P){
+    string data;
+    input >> data;
+    P.set_all(data);
+    return input;
+}
+
+ostream &operator<<(ostream &output, Product &P)
+{
+    output << P.get();
+    return output;
+}
+
+void Product::save(string filename)
+{
+    ofstream file;
+    file.open(filename);
+    file << get();
+    file.close();
+}
+
+void Product::read(string filename)
+{
+    ifstream file;
+    file.open(filename);
+    string data;
+    file >> data;
+    set_all(data);
+    file.close();
+}
+
+void* Product:: operator new(size_t size)
+{
+    void * p = ::new Product();
+    return p;
+}
+
+void Product::operator delete(void * p)
+{
+    free(p);
+}
+

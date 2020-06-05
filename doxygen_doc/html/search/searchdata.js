@@ -1,24 +1,24 @@
 var indexSectionsWithContent =
 {
-  0: "bmp~",
-  1: "bp",
-  2: "bmp",
-  3: "bmp~"
+  0: "bcdgoprs~",
+  1: "bcdp",
+  2: "cgoprs~",
+  3: "o"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "files",
-  3: "functions"
+  2: "functions",
+  3: "related"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-  2: "Files",
-  3: "Functions"
+  2: "Functions",
+  3: "Friends"
 };
 
