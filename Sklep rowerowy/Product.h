@@ -144,6 +144,7 @@ public:
     * @author Konstantin Panov
     */
     void operator delete(void * p);
+    virtual void buy_the_product();
 };
 
 #endif // PRODUCT_H

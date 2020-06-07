@@ -169,3 +169,25 @@ void Product::operator delete(void * p)
     free(p);
 }
 
+void Product::buy_the_product()
+{
+	string ans;
+	std::cout << get()
+			  << "\nDo you want to buy the product? [Y/N]: "
+			  << std::endl;
+	cin >> ans;
+	if(ans == "Y" || ans == "y")
+	{
+		int chosen_quantity;
+		cout << "To buy the product enter the quantity "
+			 << "[max. " + to_string(get_quantity()) + "]: ";
+		cin >> chosen_quantity;
+
+		if(chosen_quantity <= get_quantity())
+		{
+			change_quantity(-chosen_quantity);
+		}
+		else
+			cout << "Quantity too large. " << std::endl;
+	};
+};

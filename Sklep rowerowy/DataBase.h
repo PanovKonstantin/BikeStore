@@ -13,12 +13,12 @@ class DataBase
         virtual string get();
         virtual void add_record(Product* new_record);
         virtual void list_records_names();
-        bool get_records_data_if_exists(std::string &name, Product& p);
         friend istream &operator>>( istream  &input, DataBase &DB);
         friend ostream &operator<<(ostream &output, DataBase &DB);
         virtual void read(string filename);
         virtual void read_record(string data);
         virtual void save(string filename);
+		Product* get_product_by_name(std::string &name);
 
 
     protected:

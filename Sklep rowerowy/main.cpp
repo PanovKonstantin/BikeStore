@@ -18,7 +18,20 @@ using namespace std;
 
 int main()
 {
-    Test test;
-    cout << test.testProduct();
+	DataBase db;
+	db.read("test.txt");
+
+	Product prod("Name0", 5.50, 10);
+	Bicycle bike("BikeName0", 69.96, 3, "L");
+	db.add_record(&prod);
+	db.add_record(&bike);
+
+
+	cout << db.get() << endl;
+
+	ConsoleInterface cons_int;
+	cons_int.users_choices(db);
+
+	db.save("test.txt");
     return 0;
 }
