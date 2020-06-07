@@ -21,6 +21,7 @@ int ConsoleInterface::users_options()
 		 << "2 - Save data base in a file.\n"
          << std::endl;
 	std::cin >> answer;
+	std::cin.clear();
 	return answer;
 };
 
@@ -41,26 +42,29 @@ void ConsoleInterface::users_choices(DataBase& db)
         };
         case 1:
         {
-            string name;
-            db.list_records_names();
-            std::cout << "To get more data about the product enter its name: ";
-            std::cin >> name;
-            Product p;
-            bool ok = db.get_records_data_if_exists(name, p);
-            if(ok)
+			string name;
+			db.list_records_names();
+			std::cout << "To get more data about the product enter its name: ";
+			std::cin >> name;
+			Product* p = db.get_product_by_name(name);
+			if(p != nullptr)
             {
-                std::cout << p.get() << std::endl;
-            }
-            else
-            {
-                std::cout << "No such product. " << std::endl;
-            };
-            break;
-        };
-        case 2:
-            cout << "Enter a file name: ";
-            string filename;
-            cin >> filename;
-        };
+				p->buy_the_product();
+			}
+			else
+			{
+				std::cout << "No such product in the shop. " << std::endl;
+			};
+			break;
+		};
+		case 2:
+		{
+			cout << "Enter a file name: ";
+			string filename;
+			cin >> filename;
+			db.save(filename);
+			break;
+		};
+		};
     };
 };

@@ -19,7 +19,18 @@ DataBase::~DataBase()
 
 void DataBase::add_record(Product* new_record)
 {
-    records.push_back(new_record);
+	bool exists = false;
+	for(auto *p : records)
+	{
+		if(p->get_name().compare(new_record->get_name()) == 0)
+        {
+			exists = true;
+		}
+	}
+	if(!exists)
+    {
+		records.push_back(new_record);
+	}
 };
 
 //
@@ -49,17 +60,16 @@ void DataBase::list_records_names()
     }
 };
 
-bool DataBase::get_records_data_if_exists(std::string &name, Product& p)
+Product* DataBase::get_product_by_name(std::string &name)
 {
-    for(int i=0; i < records.size(); ++i)
-    {
-        if(name.compare(records[i]->get_name()) == 0)
-        {
-            p = *records[i];
-            return true;
-        };
-    };
-    return false;
+	for(int i = 0; i < records.size(); ++i)
+	{
+		if(name.compare(records[i]->get_name()) == 0)
+		{
+			return records[i];
+		};
+	};
+	return nullptr;
 };
 
 istream &operator>>( istream  &input, DataBase &DB){
