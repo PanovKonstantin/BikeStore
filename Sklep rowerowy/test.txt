@@ -1,3 +1,3 @@
-Product;name;123.456001;787;
-Product;Name0;5.500000;10;
-Bicycle;BikeName0;69.959999;3;L;
+Product;testname;123.456001;789;
+Product;testname2;321;123;
+Bicycle;testname3;1123.456;1789;M;

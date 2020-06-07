@@ -21,6 +21,8 @@ class Bicycle : public Product
         */
         Bicycle(string name, float price, int quantity, string bicycle_size);
 
+        Bicycle(const Bicycle &other);
+
         /**
         * Bicycle constructor. Sets every field of the object based on a string.
         * @param data a string - text with information about every field of the object.

@@ -13,6 +13,7 @@ public:
     bool test_construct();
     bool test_set();
     bool test_save();
+    bool test_read();
     bool control(Product* P, string name, float price, int quantity);
 };
 

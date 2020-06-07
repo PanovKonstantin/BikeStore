@@ -10,6 +10,7 @@ TestProduct::TestProduct(){}
 
 TestProduct::~TestProduct(){}
 
+
 bool TestProduct::test_construct()
 {
     bool result = true;
@@ -39,7 +40,6 @@ bool TestProduct::test_set()
 
 bool TestProduct::test_save()
 {
-    bool result = true;
     Product test("name", 123.456, 789);
     test.save("test.txt");
     ifstream file;
@@ -47,11 +47,28 @@ bool TestProduct::test_save()
     string t;
     file >> t;
     file.close();
+    remove("test.txt");
     if (t == "Product;name;" + to_string(float(123.456)) + ";789;")
         return true;
     else
-        cout << t << endl;
+        cout <<  "Save method in Product class failed!" << endl << t << " != " << "Product;name;" + to_string(float(123.456)) + ";789;" << endl;
     return false;
+}
+
+bool TestProduct::test_read()
+{
+    ofstream file;
+    file.open("test.txt");
+    file << "Product;name;" + to_string(float(123.456)) + ";789;";
+    file.close();
+    Product test;
+    test.read("test.txt");
+    if (test.get() == "Product;name;" + to_string(float(123.456)) + ";789;")
+        return true;
+    else
+        cout << "Read method in Product class failed!" << endl << test.get() << " != " << "Product;name;" + to_string(float(123.456)) + ";789;" << endl;
+    return false;
+
 }
 
 bool TestProduct::control(Product* P, string name, float price, int quantity)

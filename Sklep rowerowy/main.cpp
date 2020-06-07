@@ -18,20 +18,16 @@ using namespace std;
 
 int main()
 {
-	DataBase db;
-	db.read("test.txt");
+//    Test test;
+//    test.start();
 
-	Product prod("Name0", 5.50, 10);
-	Bicycle bike("BikeName0", 69.96, 3, "L");
-	db.add_record(&prod);
-	db.add_record(&bike);
+//    DataBase db;
+//    cout << db.get() << endl;
+//    db.show();
 
-
-	cout << db.get() << endl;
-
-	ConsoleInterface cons_int;
-	cons_int.users_choices(db);
-
-	db.save("test.txt");
+    ConsoleInterface ui;
+    DataBase db;
+    db.read("test.txt");
+    ui.users_choices(db);
     return 0;
 }

@@ -33,6 +33,8 @@ public:
     */
     Product(string name, float price, int quantity);
 
+    Product(const Product &other);
+
     /**
     * Product constructor from a string of information.
     * @param data a string - Information about a constructed product.
@@ -63,6 +65,8 @@ public:
     * Product get_quantity() method. Returns quantity field of the object.
     */
     virtual int get_quantity();
+
+    virtual string get_type();
 
     /**
     * Product set_all() method. Sets new value for all fields of the object.

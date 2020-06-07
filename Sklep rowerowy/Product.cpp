@@ -23,6 +23,14 @@ Product::Product(string name, float price, int quantity)
     this->quantity = quantity;
 }
 
+Product::Product(const Product &other)
+{
+    this->type = other.type;
+    this->name = other.name;
+    this->price = other.price;
+    this->quantity = other.quantity;
+}
+
 Product::Product(string data)
 {
     type = "Product";
@@ -56,6 +64,11 @@ float Product::get_price()
 int Product::get_quantity()
 {
     return quantity;
+}
+
+string Product::get_type()
+{
+    return type;
 }
 
 void Product::set_all(string name, float price, int quantity)

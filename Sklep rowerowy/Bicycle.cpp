@@ -21,6 +21,14 @@ Bicycle::Bicycle(string name, float price, int quantity, string bicycle_size)
     this->bicycle_size = bicycle_size;
 }
 
+Bicycle::Bicycle(const Bicycle &other)
+{
+    this->type = other.type;
+    this->name = other.name;
+    this->price = other.price;
+    this->bicycle_size = other.bicycle_size;
+}
+
 Bicycle::Bicycle(string data)
 {
     type = "Bicycle";

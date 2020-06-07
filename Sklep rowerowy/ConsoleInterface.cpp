@@ -19,6 +19,7 @@ int ConsoleInterface::users_options()
 		 << "0 - Quit.\n"
 		 << "1 - Show the list of the products available in the shop.\n"
 		 << "2 - Save data base in a file.\n"
+		 << "3 - Read data base from a file.\n"
          << std::endl;
 	std::cin >> answer;
 	std::cin.clear();
@@ -43,7 +44,7 @@ void ConsoleInterface::users_choices(DataBase& db)
         case 1:
         {
 			string name;
-			db.list_records_names();
+			db.show();
 			std::cout << "To get more data about the product enter its name: ";
 			std::cin >> name;
 			Product* p = db.get_product_by_name(name);
@@ -63,6 +64,14 @@ void ConsoleInterface::users_choices(DataBase& db)
 			string filename;
 			cin >> filename;
 			db.save(filename);
+			break;
+		};
+		case 3:
+		{
+			cout << "Enter a file name: ";
+			string filename;
+			cin >> filename;
+			db.read(filename);
 			break;
 		};
 		};

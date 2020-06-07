@@ -33,11 +33,12 @@ void DataBase::add_record(Product* new_record)
 	}
 };
 
-//
-//void DataBase::add_record(Product new_record)
-//{
-//    records.push_back(&new_record);
-//};
+
+void DataBase::add_record(Product new_record)
+{
+    Product * p = new Product(new_record);
+    add_record(p);
+};
 
 string DataBase::get()
 {
@@ -116,4 +117,15 @@ void DataBase::save(string filename)
     ofstream file;
     file.open(filename);
     file << *this;
+}
+
+void DataBase::show()
+{
+    string name = records[0]->get_name();
+    printf ("%*s %*s %*s %*s\n", -10, "Type", -10, "Name", -10, "Price", -10, "Quantity");
+    for (auto record : records)
+    {
+        printf ("%*s %*s %*.2f %*i\n", -10, record->get_type().c_str(), -10, record->get_name().c_str(), -10, record->get_price(), -10, record->get_quantity());
+    }
+
 }
