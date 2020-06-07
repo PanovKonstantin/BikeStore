@@ -2,7 +2,7 @@
 * Name: main.cpp
 * Purpose: Programowanie Objektowe - Projekt
 * @author Katarzyna Glaza, Krystian Kamiński, Konstantin Panov
-* @version 0.1
+* @version 0.3
 */
 #include <iostream>
 #include <fstream>
@@ -21,9 +21,6 @@ int main()
 //    Test test;
 //    test.start();
 
-//    DataBase db;
-//    cout << db.get() << endl;
-//    db.show();
 
     ConsoleInterface ui;
     DataBase db;
